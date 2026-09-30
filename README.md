@@ -1,6 +1,6 @@
 # Agents-help
 
-A small global Codex framework: one short `AGENTS.md`, two skills, seven role guides, and two templates. No orchestrator service or required multi-agent setup.
+A small global Codex framework: one short `AGENTS.md`, three skills, seven role guides, and two templates. No orchestrator service or required multi-agent setup.
 
 ## Install globally
 
@@ -11,11 +11,12 @@ mkdir -p "${CODEX_HOME:-$HOME/.codex}" "$HOME/.agents/skills"
 cp -i AGENTS.md "${CODEX_HOME:-$HOME/.codex}/AGENTS.md"
 cp -Ri skills/engineering-workflow "$HOME/.agents/skills/"
 cp -Ri skills/engineering-roles "$HOME/.agents/skills/"
+cp -Ri skills/simple-english "$HOME/.agents/skills/"
 ```
 
-If you already have global instructions, merge the short entry point into them instead of replacing them. The copy commands prompt before overwriting existing files. Keep both skill folders intact so their relative links and templates work. Repeat the skill copies when updating.
+If you already have global instructions, merge the short entry point into them instead of replacing them. The copy commands prompt before overwriting existing files. Keep all three skill folders intact so their relative links and templates work. Repeat the skill copies when updating.
 
-Codex reads global instructions from its home directory and discovers user skills under `~/.agents/skills`. An existing global `AGENTS.override.md` takes precedence over `AGENTS.md`; incorporate this entry point there if you intentionally use that override. Start a new chat after setup and ask Codex to identify the active global instructions and both skills.
+Codex reads global instructions from its home directory and discovers user skills under `~/.agents/skills`. An existing global `AGENTS.override.md` takes precedence over `AGENTS.md`; incorporate this entry point there if you intentionally use that override. Start a new chat after setup and ask Codex to identify the active global instructions and all three skills.
 
 See the official [AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md) and [skill discovery documentation](https://learn.chatgpt.com/docs/build-skills).
 
@@ -35,7 +36,12 @@ An explicit invocation such as `$engineering-workflow` or `$engineering-roles` a
 | --- | --- |
 | [Workflow skill](skills/engineering-workflow/SKILL.md) | Stage selection, task folders, and iteration semantics |
 | [Roles skill](skills/engineering-roles/SKILL.md) | Explorer, Designer, Implementer, Reviewer, QA, Integrator, Synthesizer |
+| [Simple English skill](skills/simple-english/SKILL.md) | Plain-English replies and documentation |
 | [STATUS template](skills/engineering-workflow/assets/STATUS.md) | Current goal, selected stages, evidence, next action |
 | [HANDOFF template](skills/engineering-workflow/assets/HANDOFF.md) | Enough context for the next person or agent |
 
 Task records belong in the project being worked on, under `ai/<task-name>/iteration-XX/`. They do not belong in the global installation. Quick one-step tasks can stay in chat; use persistent records when resuming or handing work off would benefit from them.
+
+Simple English defaults to Plain mode. Requested formats, including the coding-task summary, take precedence over its formatting rules. You can also invoke it with `$simple-english`.
+
+The Simple English skill and its references are unchanged copies from [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish/tree/79b590fc8596523d92c26b1ea7e33236606ef069/skills/simple-english), version 2.1.0. The source commit is `79b590fc8596523d92c26b1ea7e33236606ef069`. Its [MIT license](skills/simple-english/LICENSE) is included.
