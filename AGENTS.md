@@ -6,3 +6,21 @@
 - Use only useful stages and artifacts; a role is a responsibility, not a requirement to launch another agent.
 - Follow task-specific instructions and applicable repository guidance over these defaults.
 - If a skill is unavailable, report the missing dependency and continue useful work within the request.
+
+## Coding workflow
+
+- Inspect only the relevant files.
+- Identify the relevant entrypoint/config/caller before changing behavior when practical.
+- Make the smallest change that solves the requested problem.
+- After editing, run the smallest relevant verification command.
+- If verification cannot be run, say why and give the exact command to run.
+
+## Coding-task summary
+
+Use:
+
+- Assumptions
+- Checked
+- Changed
+- Verification
+- Risk
