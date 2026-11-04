@@ -1,6 +1,6 @@
 # Agents-help
 
-A small global Codex framework: one short `AGENTS.md`, four skills, seven role guides, and two templates. No orchestrator service is required. Engineering presentations require independent final review.
+A small global Codex framework: one short `AGENTS.md`, four skills, seven role guides, and four templates. No orchestrator service is required. Engineering presentations require independent final review.
 
 ## Install globally
 
@@ -35,14 +35,18 @@ An explicit invocation such as `$engineering-workflow` or `$engineering-roles` a
 
 | Resource | Purpose |
 | --- | --- |
-| [Workflow skill](skills/engineering-workflow/SKILL.md) | Stage selection, task folders, and iteration semantics |
+| [Workflow skill](skills/engineering-workflow/SKILL.md) | Stage selection, task progress, and reuse of prior findings |
 | [Roles skill](skills/engineering-roles/SKILL.md) | Explorer, Designer, Implementer, Reviewer, QA, Integrator, Synthesizer |
 | [Engineering slides skill](skills/engineering-slides/SKILL.md) | Worked examples, stable diagrams, progressive builds, and independent review of final exports |
 | [Simple English skill](skills/simple-english/SKILL.md) | Plain-English replies and documentation |
 | [STATUS template](skills/engineering-workflow/assets/STATUS.md) | Current goal, selected stages, evidence, next action |
 | [HANDOFF template](skills/engineering-workflow/assets/HANDOFF.md) | Enough context for the next person or agent |
+| [AI index template](skills/engineering-workflow/assets/AI-INDEX.md) | Small map of explored areas and reusable findings |
+| [Task index template](skills/engineering-workflow/assets/TASK-INDEX.md) | Findings, evidence, and iteration links for one task |
 
 Task records belong in the project being worked on, under `ai/<task-name>/iteration-XX/`. They do not belong in the global installation. Quick one-step tasks can stay in chat; use persistent records when resuming or handing work off would benefit from them.
+
+The workflow skill maintains two indexes alongside those records. `ai/index.md` stays small, with brief findings and links for explored areas. `ai/<task-name>/index.md` links findings to evidence and iterations. Before exploring code, use the root index to find relevant discoveries, including those from differently named tasks. Load only the linked details needed for the question, and confirm findings against current code. Progress stays in `STATUS.md`, so the root index does not become a task dashboard.
 
 Simple English defaults to Plain mode. Requested formats, including the coding-task summary, take precedence over its formatting rules. You can also invoke it with `$simple-english`.
 

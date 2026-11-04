@@ -1,5 +1,7 @@
 # <task-name> — Iteration <XX>
 
+Task context: [index.md](../index.md)
+
 ## Goal and acceptance
 
 - Outcome:

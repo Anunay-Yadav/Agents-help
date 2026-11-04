@@ -11,6 +11,7 @@
 
 ## Coding workflow
 
+- Before exploring code, consult `ai/index.md` if present, then only relevant task indexes and linked evidence.
 - Inspect only the relevant files.
 - Identify the relevant entrypoint/config/caller before changing behavior when practical.
 - Make the smallest change that solves the requested problem.
